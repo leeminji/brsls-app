@@ -17,8 +17,13 @@
             <canvas class="pt24" id="graphCanvas" style="width:100%;"></canvas>
         </div>
         <div class="inner24 pos_r">
-            <a href="" class="icon-square"><span class="skip">알람</span></a>
+            <a href="" class="icon-square btn-alram"><span class="skip">알람</span></a>
             <h3><strong class="fs14">최건강님의 측정보고서</strong></h3>
+            <div class="Report">
+                <div class="Report__item">
+                    
+                </div>
+            </div>
         </div>       
     </div>
 </template>
