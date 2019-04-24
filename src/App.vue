@@ -8,13 +8,27 @@
       <router-link to="/setting" tag="li"><a class="icon-setting"><span>설정</span></a></router-link>
       </ul>
     </div>
-    <router-view/>
+    <div class="content" id="content">
+      <router-view />
+    </div>
+    <Alert :is_show=is_alert_show  @close="close();"></Alert>
+    
   </div>
 </template>
 <script>
+import Alert from '@/components/common/Alert'
 export default {
   data(){
     return{
+      is_alert_show : true
+    }
+  },
+  components: {
+    Alert
+  },
+  methods : {
+    close(){
+      this.is_alert_show = false;
     }
   }
 }
@@ -22,16 +36,22 @@ export default {
 
 <style lang="scss">
 
+  .content{
+    padding-top:56px;
+  }
   .App{
     position: absolute;
-    top:56px;
+    top:0;
     bottom:0;
     left:0;
     right:0;
     z-index:1;
+    overflow-x:hidden;
     overflow-y:auto;
+    &--active{
+      overflow:hidden;
+    }
   }
-  
   .Navigaion{
     position: fixed;
     left:0;
@@ -53,8 +73,8 @@ export default {
     a{
       display: block;
       color:#fff;
-      padding-top:2px;
-      padding-bottom:10px;
+      padding-top:4px;
+      padding-bottom:8px;
       span{
         display: block;
         text-align: center;
